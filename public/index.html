@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>System Overview</title>
+	<link rel="stylesheet" type="text/css" href="/styles/style.css">
+
+	<script src="libraries/p5.min.js"></script>
+	<!-- <script async src="libraries/p5.sound.min.js"></script> -->
+
+
+
+	<!-- FAVICON -->
+	<link rel="icon" type="image/png" href="/img/faviconIcon_white.png">
+</head>
+
+<body>
+	<div class="container">
+
+		<div class="top">
+			<div class="reset">
+				<button id="resetBtn">Press and Reset</button>
+			</div>
+			<div class="txt" id="text">
+				<div class="myText">
+					<h3>Welcome to the training session</h3>
+					<p>Connect hardware by connect USB and HDMI wires to your PC.</p>
+				</div>
+			</div>
+		</div>
+
+		<div id="hardware">
+			<div class="b1" id="converter"></div>
+			<div class="b2" id="mediabox"></div>
+			<div class="b3" id="projector"></div>
+			<div class="b4" id="cam"></div>
+		</div>
+
+		<!-- PC, Monitor -->
+		<div class="box1">
+			<div id="hardware_pc"></div>
+			<div id="monitor"></div>
+		</div>
+
+		<!-- Screens -->
+		<div class="box2">
+			<div id="recPanel"></div>
+			<div id="avPanel"></div>
+		</div>
+
+		<!-- Mic, View -->
+		<div class="box3">
+			<div id="mic"></div>
+			<div id="view"></div>
+		</div>
+
+
+	</div>
+
+	<script src="drawClasses/cables_usb_hdmi.js"></script>
+
+	<script src="classes/soundBar_av.js"></script>
+	<script src="classes/button.js"></script>
+	<script src="classes/collision.js"></script>
+	<!-- <script src="classes/avScreenFunctionality.js"></script> -->
+	<script src="classes/avFunctions.js"></script>
+	<script src="classes/av_labels.js"></script>
+	<script src="classes/labels_recording.js"></script>
+	<script src="classes/mic_sineWaves.js"></script>
+	<script src="classes/mic.js"></script>
+	<script src="classes/avPanel.js"></script>
+	<script src="classes/recPanel.js"></script>
+
+	<script src="classes/cables.js"></script>
+	<script src="classes/screens.js"></script>
+	<script src="classes/hardware.js"></script>
+
+	<script src="instances/view.js"></script>
+	<script src="instances/microphone.js"></script>
+	<script src="instances/avScreen.js"></script>
+	<script src="instances/recordingScreen.js"></script>
+	<script src="instances/monitor.js"></script>
+	<script src="instances/pc.js"></script>
+	<script src="instances/converter.js"></script>
+	<script src="instances/mediabox.js"></script>
+	<script src="instances/projector.js"></script>
+	<script src="instances/cam.js"></script>
+	<script defer src="sketch.js"></script>
+</body>
+<!-- https://github.com/processing/p5.js/wiki/Local-server -->
+
+</html>

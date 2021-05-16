@@ -1,0 +1,183 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+
+canvas {
+	display: block;
+}
+
+.top {
+	position: -webkit-sticky;
+	position: sticky;
+	top: 0;
+	z-index: 1;
+	background-color: rgb(247, 247, 247);
+	/* background-color:white; */
+}
+/* .reset{
+	background-color: rgb(247, 247, 247);
+} */
+
+
+@media screen and (min-width: 0px) {
+	.container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top,
+	#hardware {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.reset {
+		flex: .1;
+	}
+	.txt {
+		flex: 1.9;
+		display: flex;
+		justify-content: center;
+	}
+	.b1,
+	.b2,
+	.b3,
+	.b4 {
+		flex: 1
+}
+}
+
+@media screen and (min-width: 320px) {
+	.box1, 
+	.box2, 
+	.box3 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.txt, .reset{
+		display: flex;
+		flex-direction: row;
+	}
+	
+	.b1,
+	.b2,
+	.b3,
+	.b4 {
+		flex: 1
+}
+}
+
+@media screen and (min-width: 767px) {
+	.box1,
+	.box2,
+	.box3,
+	.top {
+		display: flex;
+		flex-direction: row;
+	}
+
+	#hardware_pc,
+	#monitor,
+	#recPanel,
+	#avPanel,
+	#mic,
+	#view, .b1, .b2, .b3, .b4 {
+		flex: 1;
+		border-radius: 3px;
+	}
+}
+
+.container div {
+border: 1px solid #ccc;
+text-align: center;
+margin: 5px;
+/* margin-left: 1px;
+margin-top:5px; */
+}
+
+#hardware div{
+ margin: 1px;
+}
+
+
+
+.top,
+.box1
+.box2, .box3 {
+	flex: 1;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+}
+
+
+
+#text,
+#mic,
+#hardware_pc,
+#view, 
+#avPanel, 
+#recPanel,
+#hardware,
+#cam,
+#projector,
+#mediabox,
+#converter,
+#monitor {
+	position: relative;
+	overflow: hidden;
+}
+
+h3,
+h4,
+p {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 5px;
+	padding: 5px;
+}
+
+p {
+	font-size: 12px;
+}
+
+button{
+	outline: none;
+	border: 1px solid darkgrey;
+}
+.microphone button {
+	color:rgb(247, 247, 247);
+	background-color: rgb(57, 57, 57);
+	border: 1px;
+	font-size: 8px;
+}
+
+.reset{
+	padding: 5px;
+	/* background-color: white; */
+}
+#resetBtn {
+	padding-top:10%;
+	/* width:auto;
+	height: auto; */
+	text-align: center;
+	text-decoration: none;
+	font-size: 16px;
+	border-radius: 3px;
+	/* background-color: rgb(244, 255, 254); */
+}
+
+.myText{
+	border-radius: 3px;
+}
+
+.container .txt div{
+	border:0;
+}
+
+
+
+
+
