@@ -1,19 +1,27 @@
 /////////// =============================== PROJECTOR ==================================//////////////
 let projector = sketch => {
+	let hardwareProjector
+	let avScreens
+
 	// SETUP
 	sketch.setup = () => {
 		sketch.createCanvas((windowWidth = window.innerWidth), (windowHeight = 80))
 		sketch.background(247)
-		const hardwareProjector = new Hardware(sketch)
+
+		hardwareProjector = new Hardware(sketch)
 		hardwareProjector.projector()
+
 		const cables = new Cables(sketch)
 		cables.connectingCablesProjector()
-		// const shape = new Shapes(sketch)
-		// shape.pc()
 	}
 
 	// DRAW
-	sketch.draw = () => {}
+	sketch.draw = () => {
+		// changing the color of the main hardware projector
+		if (projectorActive) {
+			hardwareProjector.projectorActive()
+		}
+	}
 }
 
 let myProjector = new p5(projector, 'projector')

@@ -9,6 +9,10 @@ class AVfunctions {
 		this.screenFill = '#b7c0c6' //209, 207
 		this.strokeDefaultBar = 87
 
+		this.barPosY = 83
+		this.barRectWidth = 10
+		this.barDist = 13
+
 		this.help = false
 		this.projector = false
 		this.mic = false
@@ -16,6 +20,12 @@ class AVfunctions {
 
 		this.hdmi = false
 		this.vga = false
+		this.projectorOn = false
+
+		this.n = 1
+		this.posX = 32
+		this.nextPos = 0
+		this.nextPosLine = 0
 	}
 
 	//================== Collision with active panel (BTNs - active panel) ===================//
@@ -54,11 +64,14 @@ class AVfunctions {
 	}
 
 	display() {
+		let avLabels = new BtnLabels_av(this.p)
+
 		if (this.help) {
 			this.helpInfo()
 		}
 		if (this.projector && !this.help) {
 			this.projectorInfo()
+			avLabels.projectorActive()
 		}
 		if (this.mic && !this.projector) {
 			this.micInfo()
@@ -73,6 +86,7 @@ class AVfunctions {
 		this.p.loadImage('../img/kuLogo.png', img => {
 			this.p.image(img, 65, 80)
 		})
+
 		this.p.noStroke()
 		this.p.fill(145, 26, 30)
 		this.p.ellipse(60, 124, 15, 15) // bigger biggerCircleLogo;
@@ -112,13 +126,11 @@ class AVfunctions {
 	}
 	defaultProgressBar_Projector() {
 		// DEFAULT PROGRESSION BAR
-		// 	for (let i = 510; i <= 670; i += 13) {
-		for (let i = 45; i <= 205; i += 13) {
+		for (let i = 45; i <= 205; i += this.barDist) {
 			this.p.noFill()
 			this.p.stroke(this.strokeDefaultBar)
 			this.p.strokeWeight(0.5)
-			this.p.rect(i, 83, 10, 10) // default rect-bar
-			//this.p.line(45, 98, 211, 98)
+			this.p.rect(i, this.barPosY, this.barRectWidth, this.barRectWidth) // default rect-bar
 		}
 	}
 
@@ -146,13 +158,47 @@ class AVfunctions {
 			this.p.stroke(0, 150, 0)
 			this.p.fill(0, 205, 0, 150)
 			this.p.rect(45, 120, 65, 47)
-			// console.log('hdmi -', this.hdmi, 'projector -', this.projector)
-			// console.log(this.help, this.mic, this.offBtn)
 		}
 		if (this.vga && this.projector) {
 			this.p.stroke(104, 121, 121)
 			this.p.fill(164, 181, 181, 250)
 			this.p.rect(150, 120, 65, 47)
+		}
+	}
+
+	loadBar() {
+		if (this.p.frameCount % 22 === 0 && this.n < 14 && this.hdmi) {
+			this.n++
+			this.p.fill(0, 205, 0, 150)
+			this.p.stroke(0, 105, 0)
+			this.nextPos += this.barDist
+			this.p.rect(
+				this.posX + this.nextPos,
+				this.barPosY,
+				this.barRectWidth,
+				this.barRectWidth
+			)
+		}
+		if (this.p.frameCount % 1 === 0 && this.n < 14 && this.hdmi) {
+			let posX = 44
+			let posYLine = 98
+			this.nextPosLine += 0.6
+
+			this.p.stroke(127)
+			this.p.strokeWeight(0.8)
+
+			let nextX = posX + this.nextPosLine
+
+			if (nextX >= 210) {
+				nextX = 210
+			}
+
+			this.p.line(posX, posYLine, nextX, posYLine)
+		}
+
+		// to change the color of the main hardware projector
+		if (this.n >= 14) {
+			this.projectorOn = true
 		}
 	}
 

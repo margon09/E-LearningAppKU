@@ -151,6 +151,46 @@ class Hardware {
 		this.p.arc(25, 40, 7, 7, 3, 80) // arc
 	}
 
+	projectorActive() {
+		this.p.fill(this.camFill)
+		this.p.stroke(this.stroke)
+		this.p.strokeWeight(this.strokeWeight)
+		// main body
+		this.p.rect(3, 30, 65, 20, 7)
+		// legs
+		this.p.rect(13, 52.5, 7, 3, 5) // leg 1
+		this.p.rect(52, 52.5, 7, 3, 5) // leg 2
+
+		this.p.fill(0, 205, 0)
+
+		this.p.noStroke()
+		this.p.ellipse(25, 40, 24.5, 24.5) // stroke cam circle
+
+		this.p.rect(4, 34, 62, 2, 5) // side bars UP
+		this.p.rect(4, 44, 62, 2, 5) // side bars DOWN
+		this.p.rect(43, 38, 17, 1, 12) // stripes
+		this.p.rect(43, 41, 17, 1, 12) // stripes
+
+		this.p.fill(57)
+		this.p.strokeWeight(1.5)
+		this.p.ellipse(25, 40, 24, 24) // main cam circle
+
+		this.p.fill(0, 205, 0)
+		this.p.stroke(0, 205, 0)
+
+		this.p.noStroke()
+		this.p.ellipse(25, 40, 18, 18) // stroke cam circle
+
+		this.p.fill(57)
+		this.p.strokeWeight(1.5)
+		this.p.ellipse(25, 40, 14, 14) // linse Circle
+
+		this.p.fill(0, 205, 0)
+
+		this.p.strokeWeight(1.5)
+		this.p.arc(25, 40, 7, 7, 3, 80) // arc
+	}
+
 	mediabox() {
 		this.p.fill(57)
 		this.p.strokeWeight(1)

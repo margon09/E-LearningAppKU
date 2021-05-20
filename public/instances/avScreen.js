@@ -1,4 +1,6 @@
 //======================================== AV PANEL =============================================
+let projectorActive = false
+
 let avP = sketch => {
 	let avLabels
 	let soundBar
@@ -27,11 +29,18 @@ let avP = sketch => {
 	// DRAW
 	sketch.draw = () => {
 		soundBar.noAudioCheck()
+		avFunctions.loadBar()
+
+		// to change to the color of the main hardware projector
+		if (avFunctions.projectorOn) {
+			projectorActive = true
+		}
 	}
 
 	sketch.mousePressed = () => {
 		soundBar.pressed()
 	}
+
 	sketch.mouseClicked = () => {
 		avFunctions.activePanelCollision()
 		avFunctions.vga_hdmi_Collision()

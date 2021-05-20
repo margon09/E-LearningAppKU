@@ -100,25 +100,25 @@ class BtnLabels_av {
 		this.p.ellipse(133, 47, 5, 5) // linse Circle
 		this.p.rect(122, 57, 3, 2.3) // leg 1
 		this.p.rect(141.5, 57, 3, 2.3) // leg 2
-
-		//==== active ====//
-		// fill(0, 205, 0);
-		// strokeWeight(1);
-		// mainBody = createShape(RECT, 580, 66, 35, 14, 7, 7, 7, 7); // body
-		// stroke(0, 50, 0);
-		// strokeWeight(0.5);
-		// mainCamCircle = createShape(ELLIPSE, 598, 70, 15, 15); // main cam circle
-		// fill(57);
-		// strokeCamCircle = createShape(ELLIPSE, 598, 70, 10, 10); // stroke cam circle
-		// strokeWeight(0);
-		// sideBarLeft1 = createShape(RECT, 584, 70, 2, 7); // side bars 1 left
-		// sideBarLeft2 = createShape(RECT, 587, 70, 2, 7); // side bars 2 left
-		// sideBarRight1 = createShape(RECT, 607, 70, 2, 7); // side bars 1 right
-		// sideBarRight2 = createShape(RECT, 610, 70, 2, 7); // side bars 2 right
-		// fill(0, 205, 0);
-		// linseCircle = createShape(ELLIPSE, 598, 70, 5, 5); // linse Circle
-		// ben1 = createShape(RECT, 587, 80, 3, 2.3); // leg 1
-		// ben2 = createShape(RECT, 606.5, 80, 3, 2.3); // leg 2
+	}
+	projectorActive() {
+		this.p.fill(0, 205, 0)
+		this.p.strokeWeight(1)
+		this.p.rect(115, 43, 35, 14, 7, 7, 7, 7) // mainBody
+		this.p.stroke(0, 50, 0)
+		this.p.strokeWeight(0.5)
+		this.p.ellipse(133, 47, 15, 15) // main cam circle
+		this.p.fill(57)
+		this.p.ellipse(133, 47, 10, 10) // stroke cam circle
+		this.p.strokeWeight(0)
+		this.p.rect(119, 47, 2, 7) // side bars 1 left
+		this.p.rect(122, 47, 2, 7) // side bars 2 left
+		this.p.rect(142, 47, 2, 7) // side bars 1 right
+		this.p.rect(145, 47, 2, 7) // side bars 2 right
+		this.p.fill(0, 205, 0)
+		this.p.ellipse(133, 47, 5, 5) // linse Circle
+		this.p.rect(122, 57, 3, 2.3) // leg 1
+		this.p.rect(141.5, 57, 3, 2.3) // leg 2
 	}
 
 	microfon() {
